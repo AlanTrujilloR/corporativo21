@@ -70,12 +70,6 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     //Subida de archivos
 
     //Crear una carpeta
-    $carpetaImagen = 'imagenes';
-
-    if (!is_dir($carpetaImagen)) {
-      mkdir($carpetaImagen);
-    }
-
     //Define la extensión para el archivo
 
     if ($imagen['type'] === 'image/jpeg') {
@@ -86,7 +80,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $nombreImagen = md5(uniqid(rand(), true));
 
     // Subir imagen
-    move_uploaded_file($imagen['tmp_name'], "$carpetaImagen/$nombreImagen$exten");
+    move_uploaded_file($imagen['tmp_name'], "/imagenes/$nombreImagen$exten");
   }
 
   $queryRFC = "INSERT INTO RFC (RFC, Nombre) VALUES ('$RFC','$nombreNegocio');";
