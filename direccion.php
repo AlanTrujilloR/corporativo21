@@ -203,7 +203,7 @@ incluirTemplate("header");
       </div>
       <div class="campo">
         <label class="campo__label" for="solicitud">*Solicitud:</label>
-        <textarea placeholder="Ejemplo: Deseo promocionar mi negocio de articulos deportivos" maxlength="300" class="campo__field campo__field--textarea" id="solicitud" name="solicitud" required></textarea>
+        <textarea placeholder="Ejemplo: Deseo promocionar mi negocio de articulos deportivos" maxlength="299" class="campo__field campo__field--textarea" id="solicitud" name="solicitud" required></textarea>
       </div>
 
       <div class="campo campo-boton">
