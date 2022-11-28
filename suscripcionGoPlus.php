@@ -136,11 +136,11 @@ incluirTemplate("header");
         <form class="formulario formulario-suscripciones" method="POST" action="suscripcionGoPlus.php" enctype="multipart/form-data">
           <div class="campo">
             <label class="campo__label" for="nombreNegocio">Nombre del Negocio:</label>
-            <input class="campo__field" type="text" placeholder="Ingresa el Nombre del Negocio" id="nombreNegocio" name="nombreNegocio" value="<?php echo $nombreNegocio; ?>" required />
+            <input class="campo__field" maxlength="50" type="text" placeholder="Ingresa el Nombre del Negocio" id="nombreNegocio" name="nombreNegocio" value="<?php echo $nombreNegocio; ?>" required />
           </div>
           <div class="campo">
             <label class="campo__label" for="nombreSucursal">Nombre de la Sucursal:</label>
-            <input class="campo__field" type="text" placeholder="Ingresa el Nombre de la Sucursal" id="nombreSucursal" name="nombreSucursal" value="<?php echo $nombreSucursal; ?>" required />
+            <input class="campo__field" maxlength="50" type="text" placeholder="Ingresa el Nombre de la Sucursal" id="nombreSucursal" name="nombreSucursal" value="<?php echo $nombreSucursal; ?>" required />
           </div>
           <div class="campo">
             <label class="campo__label" for="longitud">Longitud:</label>
@@ -156,7 +156,7 @@ incluirTemplate("header");
           </div>
           <div class="campo">
             <label class="campo__label" for="RFC">RFC:</label>
-            <input class="campo__field" type="text" placeholder="Ingresa tu RFC" id="RFC" name="RFC" value="<?php echo $RFC; ?>" required />
+            <input class="campo__field" maxlength="13" type="text" placeholder="Ingresa tu RFC" id="RFC" name="RFC" value="<?php echo $RFC; ?>" required />
           </div>
           <div class="campo">
             <label class="campo__label" for="fechaInauguracion">Fecha de Inauguracion:</label>
@@ -168,19 +168,19 @@ incluirTemplate("header");
           </div>
           <div class="campo">
             <label class="campo__label" for="email">Email:</label>
-            <input class="campo__field" type="email" placeholder="Ingresa el Email de tu Negocio" id="email" name="email" value="<?php echo $email; ?>" required />
+            <input class="campo__field" type="email" maxlength="50" placeholder="Ingresa el Email de tu Negocio" id="email" name="email" value="<?php echo $email; ?>" required />
           </div>
           <div class="campo">
             <label class="campo__label" for="sitioWeb">Sitio Web:</label>
-            <input class="campo__field" type="link" placeholder="Ingresa el link de tu Sitio Web" id="sitioWeb" value="<?php echo $sitioWeb; ?>" name="sitioWeb" required />
+            <input class="campo__field" type="link" maxlength="50" placeholder="Ingresa el link de tu Sitio Web" id="sitioWeb" value="<?php echo $sitioWeb; ?>" name="sitioWeb" required />
           </div>
           <div class="campo">
             <label class="campo__label" for="redesSociales">Red Social:</label>
-            <input class="campo__field" type="text" placeholder="Facebook: Ejemplo" id="redesSociales" name="redesSociales" value="<?php echo $redesSociales; ?>" required />
+            <input class="campo__field" type="text" maxlength="25" placeholder="Facebook: Ejemplo" id="redesSociales" name="redesSociales" value="<?php echo $redesSociales; ?>" required />
           </div>
           <div class="campo">
             <label class="campo__label" for="descripcion">Descripcion:</label>
-            <textarea class="campo__field campo__field--textarea" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" required></textarea>
+            <textarea class="campo__field campo__field--textarea" maxlength="255" id="descripcion" name="descripcion" value="<?php echo $descripcion; ?>" required></textarea>
           </div>
 
           <div class="campo campo-boton">

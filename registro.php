@@ -1,9 +1,11 @@
 <?php
+session_start();
 require "includes/config/database.php";
 $db = conectarDB();
 
+$errores = [];
+
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
-  $errores = [];
 
   $usuario = mysqli_real_escape_string($db, $_POST["usuario"]);
 
@@ -30,30 +32,21 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
 
   //Consultar si persona ya existe
   $queryP = "SELECT * FROM persona WHERE Nombre_de_Usuario = '${usuario}';";
-  $resultadoP = mysqli_query($db, $consultaP);
+  $resultadoP = mysqli_query($db, $queryP);
   if (!$resultadoP->num_rows) {
     $query1 = "INSERT INTO persona (Nombre_de_Usuario,celular,correo) VALUES ('$usuario','$telefonoCelular','$email')";
     $resultado1 = mysqli_query($db, $query1);
+
+    $query2 = "INSERT INTO Usuario_General (Nombre_de_Usuario,idUsuario,Año_nac,Mes_nac,Dia_nac,ApellidoP,ApellidoN,Nombre,Años_sus,Mes_sus,Dia_sus,Contraseña,Sexo)
+    VALUES ('$usuario','$resultadoIdM','$Año_nac','$Mes_nac','$Dia_nac','$apellidoPaterno','$apellidoMaterno','$nombre','$SuscripcionAño','$SuscripcionMes','$SuscripcionDia','$password','$sexo');";
+    $resultado2 = mysqli_query($db, $query2);
+
+    $_SESSION['Nombre_de_Usuario'] = $usuario;
+    $_SESSION['login'] = true;
+    var_dump($_SESSION);
+    header("Location:/direccion.php");
   } else {
     $errores[] = "El usuario ya existe";
-  }
-
-
-  if (!$resultado1) {
-    exit;
-  } else {
-    $query2 = "INSERT INTO Usuario_General (Nombre_de_Usuario,idUsuario,Año_nac,Mes_nac,Dia_nac,ApellidoP,ApellidoN,Nombre,Años_sus,Mes_sus,Dia_sus,Contraseña,Sexo)
-     VALUES ('$usuario','$resultadoIdM','$Año_nac','$Mes_nac','$Dia_nac','$apellidoPaterno','$apellidoMaterno','$nombre','$SuscripcionAño','$SuscripcionMes','$SuscripcionDia','$password','$sexo');";
-    $resultado2 = mysqli_query($db, $query2);
-    if (!$resultado2) {
-      exit;
-    } else {
-      session_start();
-      $_SESSION['Nombre_de_Usuario'] = $usuario;
-      $_SESSION['login'] = true;
-      var_dump($_SESSION);
-      header("Location:/direccion.php");
-    }
   }
 }
 
@@ -75,37 +68,37 @@ incluirTemplate('header', $inicio = true)
     <div class="contenedor">
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Nombre de usuario" name="usuario" />
+        <input class="input-inicio" required type="text" maxlength="15" placeholder="*Nombre de usuario" name="usuario" />
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Nombre(s)" name="nombre" />
+        <input class="input-inicio" required type="text" placeholder="*Nombre(s)" maxlength="30" name="nombre" />
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Apellido Paterno" name="apellidoPaterno" />
+        <input class="input-inicio" required type="text" placeholder="*Apellido Paterno" maxlength="10" name="apellidoPaterno" />
       </div>
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Apellido Materno" name="apellidoMaterno" />
+        <input class="input-inicio" required type="text" placeholder="*Apellido Materno" maxlength="10" name="apellidoMaterno" />
       </div>
 
       <div class="input-contenedor">
         <h4 class="h4-inicio" type="text">Fecha de nacimiento</h4>
-        <input class="input-inicio" class="date" type="date" name="fechaNacimiento" />
+        <input class="input-inicio" required class="date" type="date" name="fechaNacimiento" />
       </div>
 
       <div class="input-contenedor">
         <i class="fa-sharp fa-solid fa-mobile-screen-button"></i>
-        <input class="input-inicio" type="text" placeholder="Ingrese su numero de celular" name="telefonoCelular" maxlength="10" />
+        <input class="input-inicio" required type="text" placeholder="*Ingrese su numero de celular" name="telefonoCelular" maxlength="10" />
       </div>
 
       <div class="input-contenedor">
         <h4 class="h4-inicio" type="text">Genero</h4>
         <i class="fa-sharp fa-solid fa-restroom"></i>
-        <select name="sexo" id="sexo" class="input-inicio">
+        <select name="sexo" id="sexo" class="input-inicio" required>
           <option value="" disabled selected>--Selecciona--</option>
           <option value="0">Mujer</option>
           <option value="1">Hombre</option>
@@ -114,12 +107,12 @@ incluirTemplate('header', $inicio = true)
 
       <div class="input-contenedor">
         <i class="fas fa-envelope icon"></i>
-        <input class="input-inicio" type="text" placeholder="Correo Electronico" name="email" />
+        <input class="input-inicio" required type="text" required placeholder="*Correo Electronico" maxlength="50" name="email" />
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-key icon"></i>
-        <input class="input-inicio" type="password" placeholder="Contraseña" name="password" />
+        <input class="input-inicio" type="password" required placeholder="Contraseña" maxlength="15" name="password" />
       </div>
       <input type="submit" value="Registrate" class="button" />
       <p class="parrafo-registro">

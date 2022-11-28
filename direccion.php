@@ -159,7 +159,7 @@ incluirTemplate("header");
       </p>
       <div class="campo">
         <label class="campo__label" for="calle">*Calle:</label>
-        <input class="campo__field" type="text" placeholder="Ingresa la Calle" id="calle" name="calle" required value="<?php echo $calle; ?>" />
+        <input class="campo__field" type="text" placeholder="Ingresa la Calle" id="calle" maxlength="40" name="calle" required value="<?php echo $calle; ?>" />
       </div>
       <div class="campo">
         <label class="campo__label" for="piso">Piso:</label>
@@ -171,7 +171,7 @@ incluirTemplate("header");
       </div>
       <div class="campo">
         <label class="campo__label" for="municipio">*Municipio:</label>
-        <input class="campo__field" type="text" placeholder="Ingresa el Municipio" id="municipio" name="municipio" required value="<?php echo $municipio; ?>" />
+        <input class="campo__field" type="text" placeholder="Ingresa el Municipio" id="municipio" maxlength="20" name="municipio" required value="<?php echo $municipio; ?>" />
       </div>
       <div class="campo">
         <label class="campo__label" for="numeroInterno">Número Interno:</label>
@@ -183,27 +183,27 @@ incluirTemplate("header");
       </div>
       <div class="campo">
         <label class="campo__label" for="lote">Lote:</label>
-        <input class="campo__field" type="number" placeholder="Ingresa el Lote" id="lote" name="lote" value="<?php echo $lote; ?>" />
+        <input class="campo__field" type="text" placeholder="Ingresa el Lote" id="lote" maxlength="20" name="lote" value="<?php echo $lote; ?>" />
       </div>
       <div class="campo">
         <label class="campo__label" for="asentamiento">Asentamiento:</label>
-        <input class="campo__field" type="text" placeholder="Ingresa el Asentamiento" id="asentamiento" name="asentamiento" value="<?php echo $asentamiento; ?>" />
+        <input class="campo__field" type="text" placeholder="Ingresa el Asentamiento" id="asentamiento" maxlength="50" name="asentamiento" value="<?php echo $asentamiento; ?>" />
       </div>
       <div class="campo">
         <label class="campo__label" for="estado">*Estado:</label>
-        <input class="campo__field" type="text" placeholder="Ingresa el Estado" id="estado" name="estado" required value="<?php echo $estado; ?>" />
+        <input class="campo__field" type="text" placeholder="Ingresa el Estado" id="estado" name="estado" maxlength="20" required value="<?php echo $estado; ?>" />
       </div>
       <div class="campo">
         <label class="campo__label" for="departamento">Departamento:</label>
-        <input class="campo__field" type="text" placeholder="Ingresa el Departamento" id="departamento" name="departamento" value="<?php echo $departamento; ?>" />
+        <input class="campo__field" type="text" placeholder="Ingresa el Departamento" id="departamento" maxlength="3" name="departamento" value="<?php echo $departamento; ?>" />
       </div>
       <div class="campo">
         <label class="campo__label" for="pais">*País:</label>
-        <input class="campo__field" type="text" placeholder="Ingresa el País" id="pais" name="pais" required value="<?php echo $pais; ?>" />
+        <input class="campo__field" type="text" placeholder="Ingresa el País" id="pais" name="pais" maxlength="20" required value="<?php echo $pais; ?>" />
       </div>
       <div class="campo">
         <label class="campo__label" for="solicitud">*Solicitud:</label>
-        <textarea placeholder="Ejemplo: Deseo promocionar mi negocio de articulos deportivos" class="campo__field campo__field--textarea" id="solicitud" name="solicitud" required></textarea>
+        <textarea placeholder="Ejemplo: Deseo promocionar mi negocio de articulos deportivos" maxlength="300" class="campo__field campo__field--textarea" id="solicitud" name="solicitud" required></textarea>
       </div>
 
       <div class="campo campo-boton">

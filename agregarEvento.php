@@ -128,27 +128,27 @@ incluirTemplate("header");
         Ingresa la información correspondiente para su evento
       </p>
       <div class="campo">
-        <label class="campo__label" for="fecha">Fecha:</label>
+        <label class="campo__label" for="fecha">*Fecha:</label>
         <input class="campo__field" type="date" placeholder="Ingresa la Fecha del Evento" id="fecha" name="fecha" required />
       </div>
       <div class="campo">
-        <label class="campo__label" for="hora">Hora:</label>
+        <label class="campo__label" for="hora">*Hora:</label>
         <input class="campo__field" type="time" placeholder="Ingresa la Hora del Evento" id="hora" name="hora" required />
       </div>
       <div class="campo">
-        <label class="campo__label" for="telefonoCelular">Teléfono:</label>
+        <label class="campo__label" for="telefonoCelular">*Teléfono:</label>
         <input class="campo__field" type="tel" placeholder="Ingresa tu Teléfono" id="telefonoCelular" name="telefonoCelular" maxlength="10" required />
       </div>
       <div class="campo">
-        <label class="campo__label" for="costo">Costo:</label>
+        <label class="campo__label" for="costo">*Costo:</label>
         <input class="campo__field" type="number" placeholder="Ingresa el Costo" id="costo" name="costo" required />
       </div>
       <div class="campo">
-        <label class="campo__label" for="link">Link:</label>
-        <input class="campo__field" type="url" placeholder="Ingresa el link de su evento" id="link" name="link" required />
+        <label class="campo__label" for="link">*Link:</label>
+        <input class="campo__field" type="url" maxlength="40" placeholder="Ingresa el link de su evento" id="link" name="link" required />
       </div>
       <div class="campo">
-        <label class="campo__label" for="area">Seleccione el Area:</label>
+        <label class="campo__label" for="area">*Seleccione el Area:</label>
         <select class="campo__field" name="area" id="area">
           <option value="" selected disabled>--Seleccione--</option>
           <?php while ($valores = mysqli_fetch_assoc($resultado)) : ?>
@@ -157,7 +157,7 @@ incluirTemplate("header");
         </select>
       </div>
       <div class="campo">
-        <label for="direccion" class="campo__label">Seleccione la Direccion:</label>
+        <label for="direccion" class="campo__label">*Seleccione la Direccion:</label>
         <select class="campo__field" name="direccion" id="direccion">
           <option value="" selected disabled>--Seleccione--</option>
           <?php while ($consultaD = mysqli_fetch_assoc($resultado2)) : ?>
@@ -166,12 +166,12 @@ incluirTemplate("header");
         </select>
       </div>
       <div class="campo">
-        <label class="campo__label" for="imagen">Imagen:</label>
+        <label class="campo__label" for="imagen">*Imagen:</label>
         <input class="campo__field" type="file" accept="image/jpeg" id="imagen" name="imagen" required />
       </div>
       <div class="campo">
-        <label class="campo__label" for="descripcion">Descripcion:</label>
-        <textarea class="campo__field campo__field--textarea" id="descripcion" name="descripcion" required></textarea>
+        <label class="campo__label" for="descripcion">*Descripcion:</label>
+        <textarea class="campo__field campo__field--textarea" maxlength="255" id="descripcion" name="descripcion" required></textarea>
       </div>
 
       <div class="campo campo-boton">
