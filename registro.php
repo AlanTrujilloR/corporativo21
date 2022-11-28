@@ -68,21 +68,21 @@ incluirTemplate('header', $inicio = true)
     <div class="contenedor">
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Nombre de usuario" name="usuario" />
+        <input class="input-inicio" maxlength="15" type="text" placeholder="Nombre de usuario" name="usuario" />
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Nombre(s)" name="nombre" />
+        <input class="input-inicio" maxlength="30" type="text" placeholder="Nombre(s)" name="nombre" />
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Apellido Paterno" name="apellidoPaterno" />
+        <input class="input-inicio" maxlength="10" type="text" placeholder="Apellido Paterno" name="apellidoPaterno" />
       </div>
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Apellido Materno" name="apellidoMaterno" />
+        <input class="input-inicio" maxlength="10" type="text" placeholder="Apellido Materno" name="apellidoMaterno" />
       </div>
 
       <div class="input-contenedor">
@@ -107,12 +107,12 @@ incluirTemplate('header', $inicio = true)
 
       <div class="input-contenedor">
         <i class="fas fa-envelope icon"></i>
-        <input class="input-inicio" type="text" placeholder="Correo Electronico" name="email" />
+        <input class="input-inicio" maxlength="50" type="text" placeholder="Correo Electronico" name="email" />
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-key icon"></i>
-        <input class="input-inicio" type="password" placeholder="Contraseña" name="password" />
+        <input class="input-inicio" maxlength="15" type="password" placeholder="Contraseña" name="password" />
       </div>
       <input type="submit" value="Registrate" class="button" />
       <p class="parrafo-registro">
