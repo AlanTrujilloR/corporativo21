@@ -58,21 +58,21 @@ incluirTemplate('header', $inicio = true)
     <div class="contenedor">
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Nombre de usuario" name="usuario" />
+        <input class="input-inicio" type="text" placeholder="Nombre de usuario" name="usuario" maxlength="15"/>
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Nombre(s)" name="nombre" />
+        <input class="input-inicio" type="text" placeholder="Nombre(s)" name="nombre" maxlength="30"/>
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Apellido Paterno" name="apellidoPaterno" />
+        <input class="input-inicio" type="text" placeholder="Apellido Paterno" name="apellidoPaterno" maxlength="10"/>
       </div>
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" type="text" placeholder="Apellido Materno" name="apellidoMaterno" />
+        <input class="input-inicio" type="text" placeholder="Apellido Materno" name="apellidoMaterno" maxlength="10"/>
       </div>
 
       <div class="input-contenedor">
@@ -102,7 +102,7 @@ incluirTemplate('header', $inicio = true)
 
       <div class="input-contenedor">
         <i class="fas fa-key icon"></i>
-        <input class="input-inicio" type="password" placeholder="Contraseña" name="password" />
+        <input class="input-inicio" type="password" placeholder="Contraseña" name="password" maxlength="15"/>
       </div>
       <input type="submit" value="Registrate" class="button" />
       <p class="parrafo-registro">
