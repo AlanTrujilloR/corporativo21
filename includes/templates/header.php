@@ -69,7 +69,10 @@ $auth = $_SESSION['login'] ?? false;
           <a href="fotos.php" class="navegacion__enlace">Fotos</a>
           <a href="contacto.php" class="navegacion__enlace">Contacto</a>
         </div>
-        
+        <div class="navegacion__usuario">
+          <a href="suscribeNegocio.php" class="navegacion__enlace">Suscribe tu negocio</a>
+          <a href="<?php echo $auth ? 'agregarEvento.php' : 'validacionLink.php'; ?>" class="navegacion__enlace">Agrega tu evento</a>
+        </div>
       </nav>
 
       <?php if ($index) : ?>
