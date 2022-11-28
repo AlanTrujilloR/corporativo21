@@ -158,7 +158,7 @@ incluirTemplate("header");
         Ingresa la dirección de tu negocio
       </p>
       <div class="campo">
-        <label class="campo__label" for="calle">Calle:</label>
+        <label class="campo__label" for="calle">*Calle:</label>
         <input class="campo__field" type="text" placeholder="Ingresa la Calle" id="calle" name="calle" required value="<?php echo $calle; ?>" />
       </div>
       <div class="campo">
@@ -166,11 +166,11 @@ incluirTemplate("header");
         <input class="campo__field" type="number" placeholder="Ingresa el Piso" id="piso" name="piso" value="<?php echo $piso; ?>" />
       </div>
       <div class="campo">
-        <label class="campo__label" for="codigoPostal">Código Postal:</label>
+        <label class="campo__label" for="codigoPostal">*Código Postal:</label>
         <input class="campo__field" type="number" placeholder="Ingresa el Código Postal" id="codigoPostal" name="codigoPostal" required value="<?php echo $codigoPostal; ?>" />
       </div>
       <div class="campo">
-        <label class="campo__label" for="municipio">Municipio:</label>
+        <label class="campo__label" for="municipio">*Municipio:</label>
         <input class="campo__field" type="text" placeholder="Ingresa el Municipio" id="municipio" name="municipio" required value="<?php echo $municipio; ?>" />
       </div>
       <div class="campo">
@@ -178,7 +178,7 @@ incluirTemplate("header");
         <input class="campo__field" type="number" placeholder="Ingresa el Número Interno" id="numeroInterno" name="numeroInterno" value="<?php echo $numeroInterno; ?>" />
       </div>
       <div class="campo">
-        <label class="campo__label" for="numeroExterno">Número Externo:</label>
+        <label class="campo__label" for="numeroExterno">*Número Externo:</label>
         <input class="campo__field" type="number" placeholder="Ingresa el Número Externo" id="numeroExterno" name="numeroExterno" required value="<?php echo $numeroExterno; ?>" />
       </div>
       <div class="campo">
@@ -190,7 +190,7 @@ incluirTemplate("header");
         <input class="campo__field" type="text" placeholder="Ingresa el Asentamiento" id="asentamiento" name="asentamiento" value="<?php echo $asentamiento; ?>" />
       </div>
       <div class="campo">
-        <label class="campo__label" for="estado">Estado:</label>
+        <label class="campo__label" for="estado">*Estado:</label>
         <input class="campo__field" type="text" placeholder="Ingresa el Estado" id="estado" name="estado" required value="<?php echo $estado; ?>" />
       </div>
       <div class="campo">
@@ -198,11 +198,11 @@ incluirTemplate("header");
         <input class="campo__field" type="text" placeholder="Ingresa el Departamento" id="departamento" name="departamento" value="<?php echo $departamento; ?>" />
       </div>
       <div class="campo">
-        <label class="campo__label" for="pais">País:</label>
+        <label class="campo__label" for="pais">*País:</label>
         <input class="campo__field" type="text" placeholder="Ingresa el País" id="pais" name="pais" required value="<?php echo $pais; ?>" />
       </div>
       <div class="campo">
-        <label class="campo__label" for="solicitud">Solicitud:</label>
+        <label class="campo__label" for="solicitud">*Solicitud:</label>
         <textarea placeholder="Ejemplo: Deseo promocionar mi negocio de articulos deportivos" class="campo__field campo__field--textarea" id="solicitud" name="solicitud" required></textarea>
       </div>
 

@@ -3,6 +3,7 @@ require "includes/config/database.php";
 $db = conectarDB();
 
 if ($_SERVER["REQUEST_METHOD"] === "POST") {
+  $errores = [];
 
   $usuario = mysqli_real_escape_string($db, $_POST["usuario"]);
 
@@ -26,8 +27,17 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
   $password = mysqli_real_escape_string($db, $_POST["password"]);
   $sexo = $_POST["sexo"];
 
-  $query1 = "INSERT INTO persona (Nombre_de_Usuario,celular,correo) VALUES ('$usuario','$telefonoCelular','$email')";
-  $resultado1 = mysqli_query($db, $query1);
+
+  //Consultar si persona ya existe
+  $queryP = "SELECT * FROM persona WHERE Nombre_de_Usuario = '${usuario}';";
+  $resultadoP = mysqli_query($db, $consultaP);
+  if (!$resultadoP->num_rows) {
+    $query1 = "INSERT INTO persona (Nombre_de_Usuario,celular,correo) VALUES ('$usuario','$telefonoCelular','$email')";
+    $resultado1 = mysqli_query($db, $query1);
+  } else {
+    $errores[] = "El usuario ya existe";
+  }
+
 
   if (!$resultado1) {
     exit;
@@ -54,6 +64,13 @@ incluirTemplate('header', $inicio = true)
 <main class="blog">
   <!-- Contenido Principal -->
   <form class="formulario-inicio contenedor" method="POST" action="registro.php">
+
+    <?php foreach ($errores as $error) : ?>
+      <div class="alerta error">
+        <?php echo $error; ?>
+      </div>
+    <?php endforeach; ?>
+
     <h1 class="h1-inicio">Registrate</h1>
     <div class="contenedor">
       <div class="input-contenedor">
