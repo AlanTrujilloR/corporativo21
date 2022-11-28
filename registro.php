@@ -68,31 +68,31 @@ incluirTemplate('header', $inicio = true)
     <div class="contenedor">
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" required type="text" maxlength="15" placeholder="*Nombre de usuario" name="usuario" />
+        <input class="input-inicio" type="text" placeholder="Nombre de usuario" name="usuario" />
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" required type="text" placeholder="*Nombre(s)" maxlength="30" name="nombre" />
+        <input class="input-inicio" type="text" placeholder="Nombre(s)" name="nombre" />
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" required type="text" placeholder="*Apellido Paterno" maxlength="10" name="apellidoPaterno" />
+        <input class="input-inicio" type="text" placeholder="Apellido Paterno" name="apellidoPaterno" />
       </div>
       <div class="input-contenedor">
         <i class="fas fa-user icon"></i>
-        <input class="input-inicio" required type="text" placeholder="*Apellido Materno" maxlength="10" name="apellidoMaterno" />
+        <input class="input-inicio" type="text" placeholder="Apellido Materno" name="apellidoMaterno" />
       </div>
 
       <div class="input-contenedor">
         <h4 class="h4-inicio" type="text">Fecha de nacimiento</h4>
-        <input class="input-inicio" required class="date" type="date" name="fechaNacimiento" />
+        <input class="input-inicio" class="date" type="date" name="fechaNacimiento" />
       </div>
 
       <div class="input-contenedor">
         <i class="fa-sharp fa-solid fa-mobile-screen-button"></i>
-        <input class="input-inicio" required type="text" placeholder="*Ingrese su numero de celular" name="telefonoCelular" maxlength="10" />
+        <input class="input-inicio" type="text" placeholder="Ingrese su numero de celular" name="telefonoCelular" maxlength="10" />
       </div>
 
       <div class="input-contenedor">
@@ -107,12 +107,12 @@ incluirTemplate('header', $inicio = true)
 
       <div class="input-contenedor">
         <i class="fas fa-envelope icon"></i>
-        <input class="input-inicio" required type="text" required placeholder="*Correo Electronico" maxlength="50" name="email" />
+        <input class="input-inicio" type="text" placeholder="Correo Electronico" name="email" />
       </div>
 
       <div class="input-contenedor">
         <i class="fas fa-key icon"></i>
-        <input class="input-inicio" type="password" required placeholder="Contraseña" maxlength="15" name="password" />
+        <input class="input-inicio" type="password" placeholder="Contraseña" name="password" />
       </div>
       <input type="submit" value="Registrate" class="button" />
       <p class="parrafo-registro">

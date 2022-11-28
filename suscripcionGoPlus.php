@@ -66,7 +66,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
     $errores[] = 'La imagen excede el tamaño permitido';
   }
 
-  if (empty($errores)) {
+ if (empty($errores)) {
     //Subida de archivos
 
     //Crear una carpeta
